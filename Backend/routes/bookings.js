@@ -9,12 +9,12 @@ router.post('/', (req, res) => {
         return booking.resource === resource && booking.date === date && booking.time === time;
     });
 
-    if (existingBooking) {
-        return res.status(409).json({ message: "This slot is already taken." });
-    }
-
     if (!name || !email || !resource || !date || !time) {
         return res.status(400).json({ message: "Please answer all fields." });
+    }
+
+    if (existingBooking) {
+        return res.status(409).json({ message: "This slot is already taken." });
     }
 
     const highestId = Math.max(0, ...bookings.map((booking) => {
