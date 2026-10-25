@@ -3,6 +3,7 @@ import Hero from "./components/hero"
 import About from "./components/about"
 import Experiences from "./components/experiences"
 import Contact from "./components/contact"
+import Footer from "./components/footer"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <About />
       <Experiences />
       <Contact />
+      <Footer />
       
     </>
   )
