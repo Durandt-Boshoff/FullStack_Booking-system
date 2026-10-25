@@ -4,7 +4,7 @@ function Navbar() {
     const navLinks = [
         { name: 'Home', path: '#home' },
         { name: 'About', path: '#about' },
-        { name: 'Rooms', path: '#rooms' },
+        { name: 'Experiences', path: '#rooms' },
         { name: 'Contact', path: '#contact' },
     ];
 
@@ -29,7 +29,7 @@ function Navbar() {
             <div className="mx-auto flex max-w-7xl items-center justify-between">
                 {/* Logo */}
                 <a href="#home" className="flex items-center gap-3">
-                    <span className="text-2xl">🎮</span>
+                    <span className="text-2xl">🖥️</span>
                     <span className="text-xl font-bold text-text">
                         Save Point Studio
                     </span>
@@ -94,4 +94,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default Navbar;
