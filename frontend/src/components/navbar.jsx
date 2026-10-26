@@ -57,16 +57,16 @@ function Navbar() {
                         Book a Session!
                     </Link>
                 </div>
-            </div>
 
-            {/* Mobile Menu Button */}
-            <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-2xl text-text md:hidden"
-                aria-label="Toggle navigation menu"
-            >
-                {isMenuOpen ? '✕' : '☰'}
-            </button>
+                {/* Mobile Menu Button */}
+                <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="text-2xl text-text md:hidden"
+                    aria-label="Toggle navigation menu"
+                >
+                    {isMenuOpen ? '✕' : '☰'}
+                </button>
+            </div>
 
             {/* Mobile Navigation */}
             {isMenuOpen && (
