@@ -24,7 +24,7 @@ function Booking() {
         setBookingMessage("");
 
         try {
-            const response = await fetch("http://localhost:3000/api/bookings", {
+            const response = await fetch("https://save-point-studio.onrender.com/api/bookings", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -51,7 +51,7 @@ function Booking() {
             setSelectedTime("");
 
             const slotsResponse = await fetch(
-                `http://localhost:3000/api/slots?resource=${encodeURIComponent(selectedRoom)}&date=${encodeURIComponent(selectedDate)}`
+                `https://save-point-studio.onrender.com/api/slots?resource=${encodeURIComponent(selectedRoom)}&date=${encodeURIComponent(selectedDate)}`
             );
 
             if (slotsResponse.ok) {
@@ -79,7 +79,7 @@ function Booking() {
 
             try {
                 const response = await fetch(
-                    `http://localhost:3000/api/slots?resource=${encodeURIComponent(selectedRoom)}&date=${encodeURIComponent(selectedDate)}`
+                    `https://save-point-studio.onrender.com/api/slots?resource=${encodeURIComponent(selectedRoom)}&date=${encodeURIComponent(selectedDate)}`
                 );
 
                 if (!response.ok) {

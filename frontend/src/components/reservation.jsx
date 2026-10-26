@@ -16,7 +16,7 @@ function Reservation() {
 
             try {
                 const response = await fetch(
-                    `http://localhost:3000/api/bookings/${selectedDate}/${selectedRoom}`
+                    `https://save-point-studio.onrender.com/api/bookings/${selectedDate}/${selectedRoom}`
                 );
 
                 if (!response.ok) {
@@ -47,7 +47,7 @@ function Reservation() {
 
         try {
             const response = await fetch(
-                `http://localhost:3000/api/bookings/${bookingId}`,
+                `https://save-point-studio.onrender.com/api/bookings/${bookingId}`,
                 {
                     method: "DELETE",
                 }
