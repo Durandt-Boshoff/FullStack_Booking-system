@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
     return (
         <footer className="bg-text text-background">
@@ -25,9 +27,9 @@ function Footer() {
                         <a href="#cantact" className="text-primary-accent transition hover:text-background">
                             Contact
                         </a>
-                        <a href="#booking" className="text-primary-accent transition hover:text-background">
+                        <Link to="/booking" className="text-primary-accent transition hover:text-background">
                             Book a Session
-                        </a>
+                        </Link>
                     </nav>
                 </div>
             </div>
