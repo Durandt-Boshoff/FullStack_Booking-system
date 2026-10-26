@@ -5,13 +5,30 @@ const router = express.Router();
 router.post('/', (req, res) => {
     const { name, email, resource, date, time } = req.body;
 
-    const existingBooking = bookings.some((booking) => {
-        return booking.resource === resource && booking.date === date && booking.time === time;
-    });
+    const today = new Date();
+    const selectedDate = new Date(`${date}T00:00:00`);
+
+    today.setHours(0, 0, 0, 0);
+    selectedDate.setHours(0, 0, 0, 0);
+
+    if (selectedDate < today) {
+        return res.status(400).json({ message: "The past can't be changed, but the future can."})
+    }
+
+    const now = new Date();
+    const selectedDateTime = new Date(`${date}T${time}:00`);
+
+    if (selectedDateTime < now) {
+        return res.status(400).json({ message: "That hour has pass, but the next one is just around the corner."})
+    }
 
     if (!name || !email || !resource || !date || !time) {
         return res.status(400).json({ message: "Please answer all fields." });
     }
+
+    const existingBooking = bookings.some((booking) => {
+        return booking.resource === resource && booking.date === date && booking.time === time;
+    });
 
     if (existingBooking) {
         return res.status(409).json({ message: "This slot is already taken." });
@@ -32,7 +49,10 @@ router.post('/', (req, res) => {
     };
 
     bookings.push(newBooking);
-    res.status(201).json({ message: "Booking made." });
+    res.status(201).json({ 
+        message: "Booking made.",
+        booking: newBooking
+    });
 });
 
 router.get('/:date/:resource', (req, res) => {

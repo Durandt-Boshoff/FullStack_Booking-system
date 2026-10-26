@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
     const navLinks = [
@@ -49,12 +50,12 @@ function Navbar() {
                         </a>
                     ))}
 
-                    <a 
-                        href="#booking"
+                    <Link 
+                        to="/booking"
                         className="rounded-full bg-cards px-5 py-2.5 font-semibold text-background transition-colors hover:bg-primary-accent"
                     >
                         Book a Session!
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -81,13 +82,13 @@ function Navbar() {
                         </a>
                     ))}
 
-                    <a 
-                        href="#booking"
+                    <Link
+                        to="/booking"
                         onClick={() => setIsMenuOpen(false)}
                         className="rounded-full bg-cards px-5 py-2.5 text-center font-semibold text-background transition-colors hover:bg-primary-accent"
                     >
                         Book a Session!
-                    </a>
+                    </Link>
                 </div>
             )}
         </nav>

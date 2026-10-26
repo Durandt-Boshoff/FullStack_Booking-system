@@ -7,7 +7,7 @@ function Contact() {
             <div className="mx-auto max-w-3xl">
 
                 <div className="mb-10 text-center">
-                    <span className="rounded-full bg-primary-accent/30 px-4 py-2 text-sm font-meduim text-text">
+                    <span className="rounded-full bg-primary-accent/30 px-4 py-2 text-sm font-medium text-text">
                         Contact Us
                     </span>
 

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 import slideOne from "../assets/slide_1.jpg"
 import slideTwo from "../assets/slide_2.jpg"
 
@@ -33,12 +34,12 @@ function Hero() {
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <a
-                            href="#booking"
+                        <Link
+                            to="/booking"
                             className="rounded-full bg-cards px-6 py-3 font-semibold text-background transition-colors hover:bg-primary-accent"
                         >
                             Book a Session
-                        </a>
+                        </Link>
 
                         <a
                             href="#rooms"

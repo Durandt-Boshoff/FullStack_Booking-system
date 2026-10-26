@@ -1,23 +1,16 @@
-import Navbar from "./components/navbar"
-import Hero from "./components/hero"
-import About from "./components/about"
-import Experiences from "./components/experiences"
-import Contact from "./components/contact"
-import Footer from "./components/footer"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Booking from "./components/booking"
 
 function App() {
   return (
-    <>
-      
-      <Navbar />
-      <Hero />
-      <About />
-      <Experiences />
-      <Contact />
-      <Footer />
-      
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/booking" element={<Booking />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App
